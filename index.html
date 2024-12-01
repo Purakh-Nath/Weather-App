@@ -1,60 +1,82 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=" 1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="/images/weather.png">
 </head>
-
 <body>
-    <div class="card">
-        <ul class="social-links">
-            <!-- <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li> -->
-            <!-- <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li> -->
-            <li><a href="https://github.com/purakh-nath" target="_blank"><i class="fab fa-github"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-        </ul>
+    <div class="container">
+        <div class="card">
+            <!-- Social Links with Modern Icons -->
+            <nav class="social-links">
+                <a href="https://github.com/purakh-nath" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                    <span class="tooltip">GitHub</span>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span class="tooltip">LinkedIn</span>
+                </a>
+            </nav>
 
-        <div class="search">
-            <input type="text" placeholder="Enter Location Name" spellcheck="false">
-            <button><img src="images/search.png"></button>
-        </div>
-        <div class="error">
-            <p>Please Enter Correct City Name</p>
-        </div>
-        <div class="weather">
-            <img src="images/rain.png" class="weather-icon">
-            <h1 class="temp">20°c</h1>
-            <h2 class="city">Jaipur</h2>
-            <div class="details">
-                <div class="col">
-                    <img src="images/humidity.png">
-                    <div>
-                        <p class="humidity">64%</p>
-                        <p>Humidity</p>
+            <!-- Enhanced Search Bar -->
+            <div class="search-container">
+                <div class="search">
+                    <i class="fas fa-location-dot location-icon"></i>
+                    <input type="text" placeholder="Search for a city..." spellcheck="false">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                        <div class="btn-loader"></div>
+                    </button>
+                </div>
+                <div class="error">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>Please enter a valid city name</p>
+                </div>
+            </div>
+
+            <!-- Weather Information -->
+            <div class="weather">
+                <div class="weather-primary">
+                    <img src="images/rain.png" class="weather-icon" alt="weather">
+                    <div class="temperature">
+                        <h1 class="temp">20°<span class="unit">C</span></h1>
+                        <h2 class="city">Jaipur</h2>
+                        <p class="weather-description">Scattered Clouds</p>
                     </div>
                 </div>
-                <div class="col">
-                    <img src="images/wind.png">
-                    <div>
-                        <p class="wind">3.09 km/h</p>
-                        <p>Wind Speed</p>
 
+                <!-- Weather Details -->
+                <div class="details-container">
+                    <div class="details">
+                        <div class="detail-card">
+                            <div class="detail-icon">
+                                <img src="images/humidity.png" alt="humidity">
+                            </div>
+                            <div class="detail-info">
+                                <p class="humidity">64%</p>
+                                <p class="detail-label">Humidity</p>
+                            </div>
+                        </div>
 
+                        <div class="detail-card">
+                            <div class="detail-icon">
+                                <img src="images/wind.png" alt="wind">
+                            </div>
+                            <div class="detail-info">
+                                <p class="wind">3.09 km/h</p>
+                                <p class="detail-label">Wind Speed</p>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
-
-
             </div>
         </div>
-
+    </div>
 </body>
 <script src="index.js"></script>
-
 </html>
